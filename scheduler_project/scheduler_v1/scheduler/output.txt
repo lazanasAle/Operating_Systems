@@ -1,0 +1,69 @@
+Processor: 8078 executing ../work/work7
+Processor: 8079 executing ../work/work6
+Processor: 8081 executing ../work/work5
+Processor: 8083 executing ../work/work4
+process 8080 begins
+process 8082 begins
+process 8084 begins
+process 8085 begins
+Processor: 8078 stopped: ../work/work7 with pid: 8080
+Processor: 8079 stopped: ../work/work6 with pid: 8082
+Processor: 8081 stopped: ../work/work5 with pid: 8084
+Processor: 8083 stopped: ../work/work4 with pid: 8085
+Processor: 8083 resumed: ../work/work7
+Processor: 8079 executing ../work/work2
+Processor: 8078 executing ../work/work3
+Processor: 8081 executing ../work/work1
+process 8088 begins
+process 8087 begins
+process 8086 begins
+process 8088 ends
+PID 8088CMD: ../work/work1
+        Elapsed time = 2secs
+        Execution time = 0secs
+        Workload time = 2secs
+Processor: 8081 resumed: ../work/work6
+process 8087 ends
+PID 8087CMD: ../work/work2
+        Elapsed time = 3secs
+        Execution time = 1secs
+        Workload time = 3secs
+Processor: 8079 resumed: ../work/work5
+Processor: 8083 stopped: ../work/work7 with pid: 8080
+Processor: 8083 resumed: ../work/work4
+Processor: 8078 stopped: ../work/work3 with pid: 8086
+Processor: 8078 resumed: ../work/work7
+Processor: 8081 stopped: ../work/work6 with pid: 8082
+Processor: 8081 resumed: ../work/work3
+process 8085 ends
+PID 8085CMD: ../work/work4
+        Elapsed time = 5secs
+        Execution time = 5secs
+        Workload time = 5secs
+Processor: 8083 resumed: ../work/work6
+process 8086 ends
+PID 8080CMD: ../work/work7
+        Elapsed time = 5secs
+        Execution time = 5secs
+        Workload time = 5secs
+Processor: 8079 stopped: ../work/work5 with pid: 8084
+Processor: 8079 resumed: ../work/work5
+process 8084 ends
+PID 8086CMD: ../work/work3
+        Elapsed time = 5secs
+        Execution time = 3secs
+        Workload time = 5secs
+process 8080 ends
+process 8082 ends
+PID 8084CMD: ../work/work5
+        Elapsed time = 6secs
+        Execution time = 6secs
+        Workload time = 6secs
+Processor: 8083 stopped: ../work/work6 with pid: 8082
+Processor: 8083 resumed: ../work/work6
+Processor: 8083 stopped: ../work/work6 with pid: 8082
+Processor: 8083 resumed: ../work/work6
+Processor: 8083 stopped: ../work/work6 with pid: 8082
+Processor: 8083 resumed: ../work/work6
+Processor: 8083 stopped: ../work/work6 with pid: 8082
+Processor: 8083 resumed: ../work/work6
