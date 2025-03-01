@@ -3,4 +3,4 @@ these are all in scheduler_v1 folder (each process is running only on one proces
 In scheduler_v2 folder fcfs is implemented again but this time a process may need more than one processors to run.
 work folder contains the executable files where the testing of each scheduler exists.
 
-shellMemoryManThreading has three excercises implemented in C++ one solving a multithreading problem, a shell script and a simple code for first fit algorithm in around-robin system.
+shell_memoryMan_threading has three excercises implemented in C++ one solving a multithreading problem, a shell script and a simple code for first fit algorithm in around-robin system.
