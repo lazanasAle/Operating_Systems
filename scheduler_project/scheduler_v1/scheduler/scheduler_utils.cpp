@@ -242,7 +242,7 @@ void rraff(shared_data*& shptr){
     }
 
     process proc;
-    for(size_t i=0; i<size_q ;i++){
+    for(size_t i=0; i<size_q; i++){
         shptr->mtx.lock();
         if(shptr->proc_queue.empty() && local_q.empty()){
             shptr->mtx.unlock();
