@@ -63,5 +63,5 @@ This repository contains the code me and my teampartner used for the project in 
 
 
   2) Folder shell_memoryMan_threading:
-     This was the easy project of the couse we just have 3 folders exrsX for each exercise of the project. In the first folder (exrs1) there is a basic shell-script that achieves some file configuration using awk. In the second we have the implementation of the solution of a boat rescuing concurrency problem. in the third we have the implementation of the first-fit algorithm in a system.
+     This was the easy project of the couse we just have 3 folders exrsX for each exercise of the project. In the first folder (exrs1) there is a basic shell-script that achieves some file configuration using awk. In the second we have the implementation of the solution of a boat rescuing concurrency problem. In the third we have the implementation of the first-fit algorithm in a system.
                         
