@@ -5,7 +5,7 @@ This repository contains the code me and my teampartner used for the project in 
 
 1) The folder scheduler_project:
 
-   This folder contains a **Multiprocessing System Scheduler Simulation** implemented in **C++**. The simulation models a system with **a parent process acting as the system manager**, and multiple **child processes acting as individual processors**. Each **processor (child process)** runs a **scheduling algorithm** to manage its            assigned processes. Two versions of this sv=cheduler exist there:
+   This folder contains a **Multiprocessing System Scheduler Simulation** implemented in **C++**. The simulation models a system with **a parent process acting as the system manager**, and multiple **child processes acting as individual processors**. Each **processor (child process)** runs a **scheduling algorithm** to manage its            assigned processes. Two versions of this scheduler exist here:
    
      1) Folder scheduler_v1:
         All processors use the **same scheduling algorithm** during a given execution, and the supported algorithms include:
