@@ -38,7 +38,7 @@ This repository contains the code me and my teampartner used for the project in 
       ## 💻 Technologies
 
       - Language: **C++**
-      - System Calls: `fork()`, 'execl()', `waitpid()`, 'kill()'
+      - System Calls: `fork()`, `execl()`, `waitpid()`, `kill()`
       - IPC: We used 'boost::interprocess::managed_shared_memory' for shared memory usage, 'boost::interprocess_mutex' for mutual exclusion when processors access the shared queue. For signal handling we used the library '<csignal>' and handled SIGCHLD signal when the scheduled processes (child processes of the processors) terminate.
       -      
 
