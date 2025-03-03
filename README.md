@@ -1,67 +1,128 @@
+# Operating Systems Course Projects
 
-# My Operating_Systems course projects
+This repository contains the code developed by me and my teammate for the **Operating Systems** course projects. The work is split into two main projects: a **Multiprocessing System Scheduler Simulation** and a **Shell/Memory Management/Threading Project**.
 
-This repository contains the code me and my teampartner used for the project in the course Operating Systems
+---
 
-1) The folder scheduler_project:
+## 📂 Project 1: Scheduler Project
 
-   This folder contains a **Multiprocessing System Scheduler Simulation** implemented in **C++**. The simulation models a system with **a parent process acting as the system manager**, and multiple **child processes acting as individual processors**. Each **processor (child process)** runs a **scheduling algorithm** to manage its            assigned processes. Two versions of this scheduler exist here:
-   
-     1) Folder scheduler_v1:
-        All processors use the **same scheduling algorithm** during a given execution, and the supported algorithms include:
+### Overview
 
-      - **Round Robin (RR)**
-      - **First-Come-First-Served (FCFS)**
-      - **Round Robin with Affinity (RRAFF)**
+This project simulates a **Multiprocessing System Scheduler** implemented in **C++**. The simulation models a system with:
+- A **parent process** acting as the **system manager**.
+- Multiple **child processes**, each representing an individual processor.
+- Each processor runs a **scheduling algorithm** to manage its assigned processes.
 
-        ## 💡 Project Overview
+There are **two versions** of the scheduler:
 
-      This project simulates a **multi-processor system scheduler** with:
+---
 
-      ✅ A **parent process** that spawns a constant number of **child processes** (each representing a processor).  
-      ✅ Each **processor (child)** executes processes using a common scheduling algorithm.  
-      ✅ Communication between parent and children is achieved via **IPC (shared memory and signals)**.  
-      ✅ The output tracks key scheduling events (process start, preemption, completion, etc.).
+### 📁 Folder: `scheduler_v1`
 
-      ---
+In this version, all processors use the **same scheduling algorithm** during a single execution. The supported algorithms include:
 
-      ## 🔄 Supported Scheduling Algorithms
+| Algorithm | Description |
+|---|---|
+| **FCFS** | First-Come-First-Served (FIFO queue) |
+| **RR** | Round Robin (configurable time quantum) |
+| **RRAFF** | Round Robin with **Processor Affinity** (a process always runs on the same processor once assigned) |
 
-      | Algorithm | Description |
-      |---|---|
-      | **FCFS** | First-Come-First-Served (simple FIFO queue) |
-      | **RR** | Round Robin with configurable time quantum |
-      | **RRAFF** | Round Robin with **Affinity** - Once a process starts on a processor, it **must always run on the same processor** (processor affinity) |
+---
 
-      ---
+### 🔧 Technologies Used
 
-      ## 💻 Technologies
+- **Language:** C++
+- **System Calls:** `fork()`, `execl()`, `waitpid()`, `kill()`
+- **Inter-Process Communication (IPC):**
+    - Shared Memory: `boost::interprocess::managed_shared_memory`
+    - Synchronization: `boost::interprocess::interprocess_mutex`
+    - Signal Handling: `<csignal>` (handling `SIGCHLD` when processes terminate)
 
-      - Language: **C++**
-      - System Calls: `fork()`, `execl()`, `waitpid()`, `kill()`
-      - IPC: We used `boost::interprocess::managed_shared_memory` for shared memory usage, `boost::interprocess_mutex` for mutual exclusion when processors access the shared queue. For signal handling we used the library `<csignal>` and handled SIGCHLD signal when the scheduled processes (child processes of the processors) terminate.
-      -      
+---
 
-      --
+### 🚀 Setup & Usage
 
-      ## 🚀 Setup & Usage
+1. Clone the repository.
+2. Navigate to `scheduler_v1`. Inside, you’ll find:
+    - `scheduler/` - Contains the scheduler’s source code and configuration files.
+    - `work/` - Contains the 7 processes to be scheduled.
+3. In `work/`, run:
+    ```sh
+    make
+    ```
+    This will compile the 7 processes into executables.
+4. In `scheduler/`, run:
+    ```sh
+    make
+    ```
+5. Run the scheduler with:
+    ```sh
+    ./scheduler FCFS file.txt         # For FCFS algorithm
+    ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
+    ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
+    ```
+6. `file.txt` must follow the structure of the provided `reverse.txt` in the `scheduler` folder.
 
-            - clone the repo
-            - go to the folder scheduler_v1, you will find two folders scheduler and work, the folder work is destined to contain the seven processes that the system shall schedule, the folder scheduler contains all the source files of the scheduler and two text files that just have an order for the to-be scheduled processes to be                     started. Run the command make in the folder work to create the 7 executable files.
-            - Now go to the folder scheduler and run make then to test run the command: ./scheduler FCFS ''file.txt'' (for FCFS algorithm) ./scheduler RR ''time-slice in milliseconds'' ''file.txt''(for RR replace RR with RRAFF if you want to run the RRAFF algorithm (for operational purposes timeslice should be 2 seconds or more))
-   2) Folder scheduler_v2:
-      Now a to be scheduled process can reserve more than one processors simultaneously and each one runs only FCFS algorithm. We used the same technologies with scheduler_v1
+---
 
-      ## 🚀 Setup & Usage
+### 📁 Folder: `scheduler_v2`
 
-            - clone the repo
-            - go to the folder scheduler_v2, you will find two folders scheduler and work, the folder work is destined to contain the seven processes that the system shall schedule, the folder scheduler contains all the source files of the scheduler and two text files that just have an order for the to-be scheduled processes to be                     started. Run the command make in the folder work to create the 7 executable files.
-            - Now go to the folder scheduler and run make then to test run the command: ./scheduler ''file.txt''
-      In both versions ''file.txt'' must have the respective structure of the ''reverse.txt'' file that exists in the folder ''scheduler'' of both versions
+In this version, a process can reserve **multiple processors** at the same time. All processors run the **FCFS algorithm**.
 
+---
 
+### 🚀 Setup & Usage
 
+1. Clone the repository.
+2. Navigate to `scheduler_v2`. Inside, you’ll find:
+    - `scheduler/` - Contains the scheduler’s source code and configuration files.
+    - `work/` - Contains the 7 processes to be scheduled.
+3. In `work/`, run:
+    ```sh
+    make
+    ```
+4. In `scheduler/`, run:
+    ```sh
+    make
+    ```
+5. Run the scheduler with:
+    ```sh
+    ./scheduler file.txt
+    ```
+6. `file.txt` must follow the structure of `reverse.txt` in the `scheduler` folder.
 
-  2) Folder shell_memoryMan_threading:
-     This was the easy project of the couse we just have 3 folders exrsX for each exercise of the project. In the first folder (exrs1) there is a basic shell-script that achieves some file configuration using awk. In the second we have the implementation of the solution of a boat rescuing concurrency problem. In the third we have the implementation of the first-fit algorithm in a system.
-                        
+---
+
+## 📂 Project 2: Shell, Memory Management & Threading Project
+
+This project contains **3 exercises**, each solving different problems related to operating systems:
+
+### 📁 Folder: `exrs1`
+
+- Contains a **shell script** that performs basic file configurations using `awk`.
+
+---
+
+### 📁 Folder: `exrs2`
+
+- Contains the implementation of the **Boat Rescuing Concurrency Problem**, demonstrating synchronization techniques.
+
+---
+
+### 📁 Folder: `exrs3`
+
+- Implements the **First-Fit Memory Allocation Algorithm**, demonstrating dynamic memory management in operating systems.
+
+---
+
+## 📜 Final Notes
+
+These projects were part of the **Operating Systems** course and aim to demonstrate practical understanding of:
+- Process management
+- Scheduling algorithms
+- Inter-process communication
+- Synchronization
+- Memory management
+- Basic shell scripting
+
+---
