@@ -10,7 +10,7 @@ using namespace std::chrono;
 
 int psaved=0, boats_num, max_cap, pass_num;
 counting_semaphore<INT_MAX> sem_pass(0), sem_seat(0);
-mutex mtx1, mtx_print1, mtx_print2;
+mutex mtx1,  mtx_print2;
 list<passenger> passenger::pass_queue;
 list<boat> boat::boats;
 
@@ -101,9 +101,9 @@ void boat::reach_coast(){
     ostringstream oss;
     oss<<"Boat: "<<id<<" reached coast\n";
     this_thread::sleep_for(milliseconds(14));
-    mtx_print1.lock();
+    mtx_print2.lock();
     cout<<oss.str();
-    mtx_print1.unlock();
+    mtx_print2.unlock();
 }
 
 void boat::join() const{
