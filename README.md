@@ -1,10 +1,10 @@
 # Operating Systems Course Projects
 
-This repository contains the code developed by me and my teammate for the **Operating Systems** course projects. The work is split into two main projects: a **Multiprocessing System Scheduler Simulation** and a **Shell/Memory Management/Threading Project**.
+This repository contains the code developed by me and my teammate for the **Operating Systems** course projects. The work is split into two main projects: a **Multiprocessing System Scheduler Simulation** and a **Shell-Memory Management-Threading Project**.
 
 ---
 
-## 📂 Project 1: Scheduler Project
+## 📂 Project 1: Scheduler Project (Located in folder scheduler_project)
 
 ### Overview
 
@@ -93,7 +93,7 @@ In this version, a process can reserve **multiple processors** at the same time.
 
 ---
 
-## 📂 Project 2: Shell, Memory Management & Threading Project
+## 📂 Project 2: Shell, Memory Management & Threading Project (Located in the folder shell_memoryMan_threading)
 
 This project contains **3 exercises**, each solving different problems related to operating systems:
 
@@ -105,7 +105,7 @@ This project contains **3 exercises**, each solving different problems related t
 
 ### 📁 Folder: `exrs2`
 
-- Contains the implementation of the **Boat Rescuing Concurrency Problem**, demonstrating synchronization techniques.
+- Contains the implementation of the **Boat Rescuing Concurrency Problem**, demonstrating synchronization techniques (threads, mutexes, semaphores).
 
 ---
 
