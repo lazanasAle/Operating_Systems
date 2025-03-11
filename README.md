@@ -93,6 +93,34 @@ In this version, a process can reserve **multiple processors** at the same time.
 
 ---
 
+### 📁 Folder: `c_scheduler`
+This is just a C-language version of scheduler_v1
+
+---
+
+1. Clone the repository.
+2. Navigate to `c_scheduler`. Inside, you’ll find:
+    - `scheduler/` - Contains the scheduler’s source code and configuration files.
+    - `work/` - Contains the 7 processes to be scheduled.
+3. In `work/`, run:
+    ```sh
+    make
+    ```
+    This will compile the 7 processes into executables.
+4. In `scheduler/`, run:
+    ```sh
+    make
+    ```
+5. Run the scheduler with:
+    ```sh
+    ./scheduler FCFS file.txt         # For FCFS algorithm
+    ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
+    ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
+    ```
+6. `file.txt` must follow the structure of the provided `reverse.txt` in the `scheduler` folder.
+
+---
+
 ## 📂 Project 2: Shell, Memory Management & Threading Project (Located in the folder shell_memoryMan_threading)
 
 This project contains **3 exercises**, each solving different problems related to operating systems:
