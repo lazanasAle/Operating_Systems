@@ -58,8 +58,8 @@ In this version, all processors use the **same scheduling algorithm** during a s
 5. Run the scheduler with:
     ```sh
     ./scheduler FCFS file.txt         # For FCFS algorithm
-    ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
-    ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
+    ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)
+    ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)
     ```
 6. `file.txt` must follow the structure of the provided `reverse.txt` in the `scheduler` folder.
 
@@ -114,8 +114,8 @@ This is just a C-language version of scheduler_v1
 5. Run the scheduler with:
     ```sh
     ./scheduler FCFS file.txt         # For FCFS algorithm
-    ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
-    ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)(recommended time-slice: ≥ 2000 ms)
+    ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)
+    ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)
     ```
 6. `file.txt` must follow the structure of the provided `reverse.txt` in the `scheduler` folder.
 

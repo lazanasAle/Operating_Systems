@@ -52,10 +52,6 @@ int main(int argc, char* argv[]){
                 fprintf(stderr, "invalid input filename\n");
                 exit(1);
             }
-            if(time_slice<2){
-                fprintf(stderr, "too small time slice");
-                exit(1);
-            }
         }
         else if(!strcmp(argv[1], "RRAFF")){
             pol = RRAFF;
@@ -65,14 +61,15 @@ int main(int argc, char* argv[]){
                 fprintf(stderr, "invalid input filename\n");
                 exit(1);
             }
-            if(time_slice<2){
-                fprintf(stderr, "too small time slice");
-                exit(1);
-            }
         }
         else {
             fprintf(stderr, "invalid usage\n");
-            exit(1);;
+            exit(1);
+        }
+
+        if(time_slice<1){
+            fprintf(stderr, "too small time_slice\n");
+            exit(1);
         }
     }
 

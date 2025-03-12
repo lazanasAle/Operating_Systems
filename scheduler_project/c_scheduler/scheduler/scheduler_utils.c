@@ -142,6 +142,8 @@ void rr(){
             }
         }
     }
+    while(waitpid(-1, NULL, 0)>0)
+        ;
 }
 
 
@@ -275,5 +277,7 @@ void rraff(){
         }
     }
     free(local_list);
+    while(waitpid(-1, NULL, 0)>0)
+        ;
 }
 

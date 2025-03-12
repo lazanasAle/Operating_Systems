@@ -57,10 +57,11 @@ int main(int argc, char* argv[]){
             cerr<<"invalid usage\n";
             exit(1);
         }
-    }
-    if(time_slice<2){
-        cerr<<"too small time slice\n";
-        exit(1);
+
+        if(time_slice<1){
+            cerr<<"too small time_slice\n";
+            exit(1);
+        }
     }
 
     if(fin.is_open()){

@@ -173,6 +173,8 @@ void rr(shared_data*& shptr){
             }
         }
     }
+    while(waitpid(-1, NULL, 0)>0)
+        ;
 }
 
 void fcfs(shared_data*& shptr){
@@ -319,4 +321,6 @@ void rraff(shared_data*& shptr){
             }
         }
     }
+    while(waitpid(-1, NULL, 0)>0)
+        ;
 }
