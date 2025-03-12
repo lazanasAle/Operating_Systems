@@ -60,6 +60,7 @@ In this version, all processors use the **same scheduling algorithm** during a s
     ./scheduler FCFS file.txt         # For FCFS algorithm
     ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)
     ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)
+    #(recomended time_slice >=1000)
     ```
 6. `file.txt` must follow the structure of the provided `reverse.txt` in the `scheduler` folder.
 
@@ -116,6 +117,7 @@ This is just a C-language version of scheduler_v1
     ./scheduler FCFS file.txt         # For FCFS algorithm
     ./scheduler RR <time-slice> file.txt  # For Round Robin (time-slice in ms)
     ./scheduler RRAFF <time-slice> file.txt  # For RRAFF (time-slice in ms)
+    #(recomended time_slice >=1000)
     ```
 6. `file.txt` must follow the structure of the provided `reverse.txt` in the `scheduler` folder.
 
