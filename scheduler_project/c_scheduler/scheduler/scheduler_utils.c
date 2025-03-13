@@ -276,6 +276,7 @@ void rraff(){
             }
         }
     }
+    destroy_queue(local_list, sizeof(process), local_destroyer);
     free(local_list);
     while(waitpid(-1, NULL, 0)>0)
         ;

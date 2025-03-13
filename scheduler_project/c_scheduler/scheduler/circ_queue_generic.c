@@ -77,3 +77,9 @@ void destroy_queue(circ_queue* cq, size_t obj_length, int (*destroyer)(void*, si
         destroyer(cq->queue[j], obj_length);
     }
 }
+
+
+int local_destroyer(void* ptr, size_t mem_size){
+    free(ptr);
+    return 0;
+}
